@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -9,36 +7,39 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Mail, Linkedin, ExternalLink } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { api } from "@/convex/_generated/api";
+import { contactSchema } from "@/lib/schema";
+import { useMutation } from "convex/react";
+import { ExternalLink, Linkedin, Mail } from "lucide-react";
+import { useRef, useState } from "react";
 import { toast } from "sonner";
 
 export function ContactSection() {
+  const mutation = useMutation(api.functions.createContact);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [subject, setSubject] = useState("");
-
-  // EmailJS Configuration - Set these in your environment
-  const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-  const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-  const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
-    const templateParams = {
-      from_name: formData.get("name"),
-      from_email: formData.get("email"),
+    const contact = {
+      name: formData.get("name"),
+      email: formData.get("email"),
       subject: subject,
       message: formData.get("message"),
-      to_email: "amansharma505152@gmail.com",
     };
 
-    try {
-      toast.error("Message not sent");
+    const parsedContact = contactSchema.parse(contact);
 
-      (e.target as HTMLFormElement).reset();
+    try {
+      await mutation(parsedContact);
+      formRef.current?.reset();
       setSubject("");
+      toast.success("Contact added successfully");
     } catch (error) {
       console.error("EmailJS error:", error);
       toast.error("Failed to send the message");
@@ -133,7 +134,7 @@ export function ContactSection() {
             <h3 className="text-xl font-semibold text-white mb-6">
               Send a Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4" ref={formRef}>
               <div>
                 <label
                   htmlFor="name"
@@ -179,7 +180,7 @@ export function ContactSection() {
                 </label>
                 <Select value={subject} onValueChange={setSubject}>
                   <SelectTrigger
-                    className="bg-dark-bg border-dark-border text-white focus:border-cyber-green"
+                    className="bg-dark-bg w-full border-dark-border text-white focus:border-cyber-green"
                     data-testid="select-subject"
                   >
                     <SelectValue placeholder="Select a subject" />
