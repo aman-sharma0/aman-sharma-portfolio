@@ -14,7 +14,7 @@ export function HeroSection() {
         <img
           src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080"
           alt="Cybersecurity workspace with multiple monitors"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-0"
           data-testid="hero-background-image"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-dark-bg via-dark-bg/80 to-dark-bg"></div>
