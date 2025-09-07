@@ -35,23 +35,26 @@ export function ContactSection() {
 
     const parsedContact = contactSchema.parse(contact);
 
-    try {
-      await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify(parsedContact),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      formRef.current?.reset();
-      setSubject("");
-      toast.success("Contact added successfully");
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      toast.error("Failed to send the message");
-    } finally {
-      setIsSubmitting(false);
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(parsedContact),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+    setIsSubmitting(false);
+
+    if (!response.ok) {
+      toast.error(data.message);
+      return;
     }
+
+    formRef.current?.reset();
+    setSubject("");
+    toast.success("Contact added successfully");
   };
 
   const interestAreas = [
