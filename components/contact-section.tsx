@@ -8,15 +8,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { api } from "@/convex/_generated/api";
 import { contactSchema } from "@/lib/schema";
-import { useMutation } from "convex/react";
 import { ExternalLink, Linkedin, Mail } from "lucide-react";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 
 export function ContactSection() {
-  const mutation = useMutation(api.functions.createContact);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [subject, setSubject] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
