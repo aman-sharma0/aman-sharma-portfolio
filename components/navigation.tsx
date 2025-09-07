@@ -40,7 +40,7 @@ export function Navigation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold text-cyber-green font-mono" data-testid="logo">
-            <span className="text-white">[</span>AMAN<span className="text-white">]</span>
+            <span className="text-white">[</span>textAman<span className="text-white">]</span>
           </div>
           
           <div className="hidden md:flex space-x-8">
