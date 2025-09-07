@@ -36,7 +36,13 @@ export function ContactSection() {
     const parsedContact = contactSchema.parse(contact);
 
     try {
-      await mutation(parsedContact);
+      await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(parsedContact),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       formRef.current?.reset();
       setSubject("");
       toast.success("Contact added successfully");
