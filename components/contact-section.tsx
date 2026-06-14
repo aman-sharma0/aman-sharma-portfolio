@@ -58,9 +58,9 @@ export function ContactSection() {
     { name: "Red Team Operations", color: "cyber-green" },
     { name: "Cloud Security", color: "cyber-blue" },
     { name: "Mobile Security", color: "green-500" },
-    { name: "Hardware Testing", color: "amber-500" },
+    { name: "Network Security", color: "amber-500" },
     { name: "Research Collaboration", color: "purple-500" },
-    { name: "Mentorship", color: "red-500" },
+    { name: "Security Auditing", color: "red-500" },
   ];
 
   return (
@@ -74,8 +74,7 @@ export function ContactSection() {
             className="text-gray-400 max-w-2xl mx-auto"
             data-testid="contact-subtitle"
           >
-            Ready to discuss cybersecurity opportunities, collaborate on red
-            team exercises, or share insights
+            Ready to discuss cybersecurity opportunities, collaborate on project ideas, or share insights
           </p>
         </div>
 
@@ -202,7 +201,7 @@ export function ContactSection() {
                       Technical Discussion
                     </SelectItem>
                     <SelectItem value="Mentorship Request">
-                      Mentorship Request
+                      Freelance Audit Request
                     </SelectItem>
                     <SelectItem value="Other">Other</SelectItem>
                   </SelectContent>
