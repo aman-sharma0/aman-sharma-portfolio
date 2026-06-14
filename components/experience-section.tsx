@@ -1,39 +1,54 @@
 import { Building, Calendar, ChevronRight } from "lucide-react";
 
 export function ExperienceSection() {
-  const responsibilities = [
+  
+    const aksResponsibilities = [
+    "Conducting infrastructure & network penetration testing for PSU, government, and private clients",
+    "Performing credentialed & non-credentialed vulnerability assessments using Nessus Pro",
+    "Executing security configuration audits and network architecture reviews",
+    "Filing compliance reports against CERT-In 2022 and ISO 27001 frameworks"
+  ];
+
+  const aksParallelDevelopment = [
+    "Pursuing CPTS certification on HackTheBox",
+    "Android & web application security research",
+    "Building expertise in enterprise network security",
+    "Continuous upskilling in offensive security techniques"
+  ];
+  
+  const TechmResponsibilities = [
     "Performing product security testings",
     "Involving in infrastructure security activities",
     "Collaborating with core VAPT team to find vulnerabilities and report them to stakeholders",
     "Staying updated with emerging technologies and industry best practices"
   ];
 
-  const parallelDevelopment = [
+  const TechmparallelDevelopment = [
     "Active participation in penetration testing labs",
-    "Red team exercise simulations",
+    "Learning and understanding security frameworks",
     "Cybersecurity certification pursuit",
     "Network security research and testing"
   ];
 
   const projects = [
     {
+      title: "Network Security Auditing",
+      description: "Infrastructure vulnerability assessments and compliance audits for PSU and government clients",
+      tags: ["Active Directory", "Firewall ACLs", "DC/DR Infrastructure", "Network Devices"],
+      color: "cyber-green"
+    },
+    {
       title: "Web Application Security",
       description: "Advanced penetration testing on PortSwigger Academy and HackTheBox platforms",
-      tags: ["SQLi", "XSS", "CSRF", "IDOR"],
-      color: "cyber-green"
+      tags: ["OWASP Top 10", "API Security", "Auth Testing", "Business Logic"],
+      color: "cyber-blue"
     },
     {
       title: "Android Pentesting",
       description: "Mobile application security analysis using static and dynamic testing methodologies",
-      tags: ["MobSF", "Frida", "Drozer"],
-      color: "cyber-blue"
-    },
-    {
-      title: "Hardware Security",
-      description: "OS image analysis and root filesystem security testing on IoT devices",
-      tags: ["Raspberry Pi", "NVIDIA Orin"],
+      tags: ["Static Analysis", "Dynamic Analysis", "Network Traffic", "Reverse Engineering"],
       color: "green-500"
-    }
+    },
   ];
 
   return (
@@ -48,13 +63,59 @@ export function ExperienceSection() {
           </p>
         </div>
 
-        {/* Current Role */}
+        {/* AKS - Current Role */}
+<div className="bg-dark-card border border-cyber-green/50 rounded-lg p-8 mb-8 hover:border-cyber-green transition-all duration-300" data-testid="aks-role">
+  <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+    <div>
+      <h3 className="text-2xl font-bold text-cyber-green mb-2 flex items-center">
+        <Building className="w-6 h-6 mr-2" />
+        Infosec Consultant (Network Security)
+      </h3>
+      <p className="text-xl text-cyber-blue">AKS IT Services Pvt Ltd</p>
+      <p className="text-gray-400 font-mono">Information Security & Audit</p>
+    </div>
+    <div className="text-right mt-4 md:mt-0">
+      <p className="text-cyber-green font-semibold flex items-center">
+        <Calendar className="w-4 h-4 mr-1" />
+        Apr 2026 – Present
+      </p>
+      <p className="text-sm text-gray-400">Current Role</p>
+    </div>
+  </div>
+
+  <div className="grid md:grid-cols-2 gap-8">
+    <div>
+      <h4 className="text-lg font-semibold text-white mb-4">Key Responsibilities</h4>
+      <ul className="space-y-2 text-gray-300">
+        {aksResponsibilities.map((responsibility, index) => (
+          <li key={index} className="flex items-start">
+            <ChevronRight className="text-cyber-green mr-2 mt-1 w-4 h-4 flex-shrink-0" />
+            {responsibility}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h4 className="text-lg font-semibold text-white mb-4">Parallel Development</h4>
+      <ul className="space-y-2 text-gray-300">
+        {aksParallelDevelopment.map((item, index) => (
+          <li key={index} className="flex items-start">
+            <ChevronRight className="text-cyber-blue mr-2 mt-1 w-4 h-4 flex-shrink-0" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+        {/* Previous Role */}
         <div className="bg-dark-card border border-dark-border rounded-lg p-8 mb-8 hover:border-cyber-green/50 transition-all duration-300" data-testid="current-role">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
             <div>
               <h3 className="text-2xl font-bold text-cyber-green mb-2 flex items-center">
                 <Building className="w-6 h-6 mr-2" />
-                Associate Software Engineer
+                Associate Software Engineer - Cybersecurity
               </h3>
               <p className="text-xl text-cyber-blue">Tech Mahindra</p>
               <p className="text-gray-400 font-mono">ENS – Digital Engineering Solutions</p>
@@ -62,9 +123,9 @@ export function ExperienceSection() {
             <div className="text-right mt-4 md:mt-0">
               <p className="text-cyber-green font-semibold flex items-center">
                 <Calendar className="w-4 h-4 mr-1" />
-                Mar 2024 – Present
+                Mar 2024 – Apr 2026
               </p>
-              <p className="text-sm text-gray-400">Current Role</p>
+              <p className="text-sm text-gray-400">Previous Role</p>
             </div>
           </div>
 
@@ -72,7 +133,7 @@ export function ExperienceSection() {
             <div data-testid="responsibilities">
               <h4 className="text-lg font-semibold text-white mb-4">Key Responsibilities</h4>
               <ul className="space-y-2 text-gray-300">
-                {responsibilities.map((responsibility, index) => (
+                {TechmResponsibilities.map((responsibility, index) => (
                   <li key={index} className="flex items-start">
                     <ChevronRight className="text-cyber-green mr-2 mt-1 w-4 h-4 flex-shrink-0" />
                     {responsibility}
@@ -83,7 +144,7 @@ export function ExperienceSection() {
             <div data-testid="parallel-development">
               <h4 className="text-lg font-semibold text-white mb-4">Parallel Development</h4>
               <ul className="space-y-2 text-gray-300">
-                {parallelDevelopment.map((item, index) => (
+                {TechmparallelDevelopment.map((item, index) => (
                   <li key={index} className="flex items-start">
                     <ChevronRight className="text-cyber-blue mr-2 mt-1 w-4 h-4 flex-shrink-0" />
                     {item}
