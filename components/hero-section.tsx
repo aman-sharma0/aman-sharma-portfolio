@@ -62,10 +62,10 @@ export function HeroSection() {
             <span className="gradient-text animate-glitch">Aman Sharma</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-2" data-testid="hero-subtitle">
-            Cybersecurity Enthusiast
+            InfoSec Consultant
           </p>
           <p className="text-lg text-gray-400 font-mono" data-testid="hero-description">
-            Penetration Tester • Red Team Aspirant • Security Engineer
+            Offensive Mindset. Defensive Impact.
           </p>
         </div>
 
@@ -74,10 +74,10 @@ export function HeroSection() {
             VAPT Specialist
           </span>
           <span className="px-4 py-2 bg-dark-card border border-cyber-blue/30 rounded-full text-sm font-mono text-cyber-blue">
-            Cloud Security
+            Network Pentester
           </span>
           <span className="px-4 py-2 bg-dark-card border border-green-500/30 rounded-full text-sm font-mono text-green-500">
-            Red Teaming
+            Security Auditor
           </span>
         </div>
 
