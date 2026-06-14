@@ -2,6 +2,12 @@ import { Award, Zap, Target } from "lucide-react";
 
 export function CertificationsSection() {
   const recentCertifications = [
+      
+    {
+      title: "Certified Ethical Hacker",
+      subtitle: "CEHv13",
+      year: "2026"
+    },
     {
       title: "AWS Cloud Practitioner",
       subtitle: "CLF-C02",
@@ -12,11 +18,6 @@ export function CertificationsSection() {
       subtitle: "Network Academy",
       year: "2025"
     },
-    {
-      title: "Cisco Cybersecurity Intro",
-      subtitle: "Network Academy",
-      year: "2025"
-    }
   ];
 
   const nuixCertifications = [
@@ -27,7 +28,7 @@ export function CertificationsSection() {
   ];
 
   const plannedCertifications = [
-    { name: "CEH", description: "Certified Ethical Hacker", color: "amber-500" },
+    { name: "CPTS", description: "HTB Certified Penetration Testing Specialist", color: "amber-500" },
     { name: "OSCP", description: "Offensive Security", color: "red-500" },
     { name: "CRTP", description: "Red Team Professional", color: "purple-500" }
   ];
@@ -49,7 +50,7 @@ export function CertificationsSection() {
           <div className="bg-dark-card border border-dark-border rounded-lg p-6" data-testid="recent-certifications">
             <h3 className="text-xl font-semibold text-cyber-green mb-6 flex items-center">
               <Award className="w-6 h-6 mr-2" />
-              Recent Achievements (2025)
+              Recent Achievements (2026)
             </h3>
             <div className="space-y-4">
               {recentCertifications.map((cert, index) => (
