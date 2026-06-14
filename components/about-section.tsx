@@ -65,7 +65,7 @@ export function AboutSection() {
             <p className="text-lg text-gray-300 leading-relaxed" data-testid="about-intro">
               I am <span className="text-cyber-green font-semibold animate-glitch">Aman Sharma</span>, a passionate and ambitious
               Cybersecurity Enthusiast & Penetration Testing specialist, currently working as an
-              <span className="text-cyber-blue font-semibold"> Associate Software Engineer at Tech Mahindra</span>.
+              <span className="text-cyber-blue font-semibold"> Information Security Consultant at AKS IT Services</span>.
             </p>
 
             <p className="text-gray-300 leading-relaxed" data-testid="about-description">
@@ -78,7 +78,7 @@ export function AboutSection() {
               <h3 className="text-cyber-green font-semibold mb-3 font-mono">[MISSION]</h3>
               <p className="text-gray-300 leading-relaxed">
                 To become a top-tier Cybersecurity Professional, specializing in Red Teaming,
-                Advanced Pentesting, and Hardware Security Testing while helping organizations
+                Advanced Pentesting, and Network Security Testing while helping organizations
                 secure their infrastructure against advanced threats.
               </p>
             </div>
