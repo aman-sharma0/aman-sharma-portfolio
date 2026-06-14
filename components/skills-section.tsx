@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Shield, Settings, Cloud, Wifi, Code, Monitor } from "lucide-react";
+import { Shield, Settings, scanSearch, Wifi, Code, Monitor } from "lucide-react";
 
 export function SkillsSection() {
   const colorVariants: Record<
@@ -38,10 +38,10 @@ export function SkillsSection() {
       title: "Penetration Testing",
       color: "cyber-green",
       items: [
+        "Infrastructure & Netwrok Pentesting",
         "Web Application Testing (OWASP Top 10)",
+        "External Penetration Testing (EPT)",
         "Android App Pentesting",
-        "Infrastructure Testing",
-        "Hardware Security Testing",
       ],
     },
     {
@@ -49,24 +49,37 @@ export function SkillsSection() {
       title: "Security Tools",
       color: "cyber-blue",
       tools: [
+        "Nessus Pro",
+        "Nmap",
+        "Advance Ip Scanner",
         "Metasploit",
         "Burp Suite",
-        "Nmap",
         "Wireshark",
         "MobSF",
         "Frida",
       ],
     },
     {
-      icon: Cloud,
-      title: "Cloud Security",
+      icon: scanSearch,
+      title: "Vulnerability Assessment & Auditing",
       color: "cyber-green",
       items: [
-        "AWS Security Fundamentals",
-        "Identity & Access Management",
-        "Cloud Architecture Security",
+        "Credentialed & Non-Credentialed",
+        "Network Architecture Review",
+        "Security Configuration Review",
+        "Compliance Auditing (CERT-In, ISO 27001",
       ],
     },
+    // {
+    //   icon: Cloud,
+    //   title: "Cloud Security",
+    //   color: "cyber-green",
+    //   items: [
+    //     "AWS Security Fundamentals",
+    //     "Identity & Access Management",
+    //     "Cloud Architecture Security",
+    //   ],
+    // },
     {
       icon: Wifi,
       title: "Networking",
@@ -82,8 +95,8 @@ export function SkillsSection() {
       title: "Programming",
       color: "purple-500",
       skills: [
-        { name: "Python", level: 90 },
-        { name: "Bash", level: 85 },
+        { name: "Python", level: 85 },
+        { name: "Bash", level: 80 },
       ],
     },
     {
@@ -109,7 +122,7 @@ export function SkillsSection() {
             className="text-gray-400 max-w-2xl mx-auto"
             data-testid="skills-subtitle"
           >
-            Comprehensive skillset spanning offensive security, cloud platforms,
+            Comprehensive skillset spanning offensive security, Network Infrastructure, cloud platforms,
             and enterprise technologies
           </p>
         </div>
