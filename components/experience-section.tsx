@@ -1,8 +1,9 @@
 import { Building, Calendar, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function ExperienceSection() {
-  
-    const aksResponsibilities = [
+
+  const aksResponsibilities = [
     "Conducting infrastructure & network penetration testing for PSU, government, and private clients",
     "Performing credentialed & non-credentialed vulnerability assessments using Nessus Pro",
     "Executing security configuration audits and network architecture reviews",
@@ -15,7 +16,7 @@ export function ExperienceSection() {
     "Building expertise in enterprise network security",
     "Continuous upskilling in offensive security techniques"
   ];
-  
+
   const TechmResponsibilities = [
     "Performing product security testings",
     "Involving in infrastructure security activities",
@@ -51,6 +52,24 @@ export function ExperienceSection() {
     },
   ];
 
+  const projectColorVariants: Record<
+    string,
+    { text: string; borderHover: string }
+  > = {
+    "cyber-green": {
+      text: "text-cyber-green",
+      borderHover: "hover:border-cyber-green/30",
+    },
+    "cyber-blue": {
+      text: "text-cyber-blue",
+      borderHover: "hover:border-cyber-blue/30",
+    },
+    "green-500": {
+      text: "text-green-500",
+      borderHover: "hover:border-green-500/30",
+    },
+  };
+
   return (
     <section id="experience" className="py-20 bg-dark-card/30" data-testid="experience-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,50 +83,50 @@ export function ExperienceSection() {
         </div>
 
         {/* AKS - Current Role */}
-<div className="bg-dark-card border border-cyber-green/50 rounded-lg p-8 mb-8 hover:border-cyber-green transition-all duration-300" data-testid="aks-role">
-  <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-    <div>
-      <h3 className="text-2xl font-bold text-cyber-green mb-2 flex items-center">
-        <Building className="w-6 h-6 mr-2" />
-        Infosec Consultant (Network Security)
-      </h3>
-      <p className="text-xl text-cyber-blue">AKS IT Services Pvt Ltd</p>
-      <p className="text-gray-400 font-mono">Information Security & Audit</p>
-    </div>
-    <div className="text-right mt-4 md:mt-0">
-      <p className="text-cyber-green font-semibold flex items-center">
-        <Calendar className="w-4 h-4 mr-1" />
-        Apr 2026 – Present
-      </p>
-      <p className="text-sm text-gray-400">Current Role</p>
-    </div>
-  </div>
+        <div className="bg-dark-card border border-cyber-green/50 rounded-lg p-8 mb-8 hover:border-cyber-green transition-all duration-300" data-testid="aks-role">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+            <div>
+              <h3 className="text-2xl font-bold text-cyber-green mb-2 flex items-center">
+                <Building className="w-6 h-6 mr-2" />
+                Infosec Consultant (Network Security)
+              </h3>
+              <p className="text-xl text-cyber-blue">AKS IT Services Pvt Ltd</p>
+              <p className="text-gray-400 font-mono">Information Security & Audit</p>
+            </div>
+            <div className="text-right mt-4 md:mt-0">
+              <p className="text-cyber-green font-semibold flex items-center">
+                <Calendar className="w-4 h-4 mr-1" />
+                Apr 2026 – Present
+              </p>
+              <p className="text-sm text-gray-400">Current Role</p>
+            </div>
+          </div>
 
-  <div className="grid md:grid-cols-2 gap-8">
-    <div>
-      <h4 className="text-lg font-semibold text-white mb-4">Key Responsibilities</h4>
-      <ul className="space-y-2 text-gray-300">
-        {aksResponsibilities.map((responsibility, index) => (
-          <li key={index} className="flex items-start">
-            <ChevronRight className="text-cyber-green mr-2 mt-1 w-4 h-4 flex-shrink-0" />
-            {responsibility}
-          </li>
-        ))}
-      </ul>
-    </div>
-    <div>
-      <h4 className="text-lg font-semibold text-white mb-4">Parallel Development</h4>
-      <ul className="space-y-2 text-gray-300">
-        {aksParallelDevelopment.map((item, index) => (
-          <li key={index} className="flex items-start">
-            <ChevronRight className="text-cyber-blue mr-2 mt-1 w-4 h-4 flex-shrink-0" />
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-</div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Key Responsibilities</h4>
+              <ul className="space-y-2 text-gray-300">
+                {aksResponsibilities.map((responsibility, index) => (
+                  <li key={index} className="flex items-start">
+                    <ChevronRight className="text-cyber-green mr-2 mt-1 w-4 h-4 flex-shrink-0" />
+                    {responsibility}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Parallel Development</h4>
+              <ul className="space-y-2 text-gray-300">
+                {aksParallelDevelopment.map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <ChevronRight className="text-cyber-blue mr-2 mt-1 w-4 h-4 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
 
         {/* Previous Role */}
         <div className="bg-dark-card border border-dark-border rounded-lg p-8 mb-8 hover:border-cyber-green/50 transition-all duration-300" data-testid="current-role">
@@ -160,14 +179,17 @@ export function ExperienceSection() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`bg-dark-card border border-dark-border rounded-lg p-6 hover:border-${project.color}/30 transition-all duration-300`}
+              className={cn(
+                "flex flex-col bg-dark-card border border-dark-border rounded-lg p-6 transition-all duration-300",
+                projectColorVariants[project.color]?.borderHover
+              )}
               data-testid={`project-${index}`}
             >
-              <h4 className={`text-lg font-semibold text-${project.color} mb-3`}>
+              <h4 className={cn("text-lg font-semibold mb-3", projectColorVariants[project.color]?.text)}>
                 {project.title}
               </h4>
               <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
