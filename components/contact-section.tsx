@@ -200,7 +200,7 @@ export function ContactSection() {
                     <SelectItem value="Technical Discussion">
                       Technical Discussion
                     </SelectItem>
-                    <SelectItem value="Mentorship Request">
+                    <SelectItem value="Freelance Audit Request">
                       Freelance Audit Request
                     </SelectItem>
                     <SelectItem value="Other">Other</SelectItem>
