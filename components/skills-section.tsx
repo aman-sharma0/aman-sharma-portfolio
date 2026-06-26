@@ -61,7 +61,7 @@ export function SkillsSection() {
     },
     {
       icon: ScanEye,
-      title: "Vulnerability Assessment & Audit",
+      title: "Vulnerability Assessment & Security Auditing",
       color: "cyber-green",
       items: [
         "Credentialed & Non-Credentialed",
