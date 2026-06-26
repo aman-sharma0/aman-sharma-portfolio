@@ -34,17 +34,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    after(async () => {
-      await resend.emails.send({
-        from: process.env.SENDER_EMAIL ?? "",
-        to: process.env.RECEIVER_EMAIL ?? "",
-        subject: contact.subject,
-        react: ContactFormEmail({ ...contact }),
-        headers: {
-          "X-Entity-Ref-ID": randomUUID(),
-        },
-      });
-    });
+after(async () => {
+  await resend.emails.send({
+    from: process.env.SENDER_EMAIL ?? "",
+    to: process.env.RECEIVER_EMAIL ?? "",
+    replyTo: contact.email,
+    subject: `New Contact Form: ${contact.subject}`,
+    react: ContactFormEmail({ ...contact }),
+    headers: {
+      "X-Entity-Ref-ID": randomUUID(),
+    },
+  });
+});
 
     return NextResponse.json(
       { message: "Email sent successfully" },
