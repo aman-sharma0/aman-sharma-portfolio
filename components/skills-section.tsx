@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Shield, Settings, scanSearch, Wifi, Code, Monitor } from "lucide-react";
+import { Shield, Settings, ScanSearch, Wifi, Code, Monitor } from "lucide-react";
 
 export function SkillsSection() {
   const colorVariants: Record<
@@ -60,7 +60,7 @@ export function SkillsSection() {
       ],
     },
     {
-      icon: scanSearch,
+      icon: ScanSearch,
       title: "Vulnerability Assessment & Auditing",
       color: "cyber-green",
       items: [
