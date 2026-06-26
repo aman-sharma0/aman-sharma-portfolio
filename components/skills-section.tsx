@@ -140,22 +140,22 @@ export function SkillsSection() {
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
             >
-              <div className="flex items-center mb-4">
-                <skill.icon
-                  className={cn(
-                    "w-8 h-8 mr-3",
-                    colorVariants[skill.color]?.text
-                  )}
-                />
-                <h3
-                  className={cn(
-                    "text-xl font-semibold",
-                    colorVariants[skill.color]?.text
-                  )}
-                >
-                  {skill.title}
-                </h3>
-              </div>
+              <div className="flex items-start gap-3 mb-4">
+              <skill.icon
+                className={cn(
+                  "w-8 h-8 shrink-0 mt-1",
+                  colorVariants[skill.color]?.text
+                )}
+              />
+              <h3
+                className={cn(
+                  "text-xl font-semibold leading-tight",
+                  colorVariants[skill.color]?.text
+                )}
+              >
+                {skill.title}
+              </h3>
+            </div>
 
               {skill.items && (
                 <ul className="space-y-2 text-gray-300">
