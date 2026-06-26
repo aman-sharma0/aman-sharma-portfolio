@@ -1,6 +1,6 @@
 //import { useEffect, useState } from "react";
 
-// export function AboutSection() {
+export function AboutSection() {
 //   const [labMachines, setLabMachines] = useState(0);
 //   const [certifications, setCertifications] = useState(0);
 
