@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
         { status: 429 }
       );
     }
-
+console.log("Subject received:", contact.subject);
 after(async () => {
   await resend.emails.send({
     from: process.env.SENDER_EMAIL ?? "",
